@@ -1,0 +1,69 @@
+﻿@page "{id:Guid}"
+@model YamahaEventos.Pages.EventsSupply.ListModel
+@{
+    ViewData["Title"] = "Lista de Brindes";
+}
+
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 class="mb-3">@ViewData["Title"]</h1>
+
+        @if (Model.Supplies != null && Model.Supplies.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição do Item</th>
+                        <th>Qtd. Total</th>
+                        <th>Qtd. por Participante</th>
+                        <th>Qtd. por Retirada</th>
+                        <th>Tipo de brinde</th>
+                        <th>
+                            <a href="/EventsSupply/Add/@Model.Id" class="btn btn-dark">Add</a>
+
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var supply in Model.Supplies)
+                    {
+
+                        <tr>
+                            <td>@supply.Name</td>
+                            <td>@supply.Description</td>
+                            <td>@supply.TotalQuantity</td>
+                            <td>@supply.TotalPerParticipants</td>
+                            <td>@supply.TotalQuantityPerReceive</td>
+                            <td>@supply.SupplyType</td>
+                            <td> 
+                                <a href="/EventsSupply/Edit/@supply.EventId/@supply.Id" class="btn btn-dark">Editar</a>
+                            </td>
+                        </tr>
+
+
+                    }
+                </tbody>
+            </table>
+
+        }
+        else
+        {
+
+            <div >
+                <p><strong>Não existe brindes cadastrados neste evento</strong></p>
+                <a href="/EventsSupply/Add/@Model.Id" class="btn btn-dark">Add</a>
+                
+
+            </div>
+
+        }
+
+
+    </body>
+</html>

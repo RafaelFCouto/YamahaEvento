@@ -1,0 +1,90 @@
+﻿@page
+@model YamahaEventos.Pages.Events.AddModel
+@{
+
+}
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 class="mb-3">Novo Evento</h1>
+
+        <form method="post">
+
+
+            <div class="mb-3">
+
+                <label class="form-label">Nome</label><br />
+                <span asp-validation-for="AddEventRequest.Name" class="text-danger"></span>
+                <input type="text" class="form-control" asp-for="AddEventRequest.Name" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Descrição</label><br />
+                <span asp-validation-for="AddEventRequest.Description" class="text-danger"></span>
+                <textarea class="form-control" asp-for="AddEventRequest.Description"></textarea>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label">Departamento</label><br />
+                <span asp-validation-for="AddEventRequest.DepartamentResponsible" class="text-danger"></span>
+                <input type="text" class="form-control" asp-for="AddEventRequest.DepartamentResponsible" />
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label">Data de Início</label><br />
+                <span asp-validation-for="AddEventRequest.StartDate" class="text-danger"></span>
+                <input type="date" class="form-control" asp-for="AddEventRequest.StartDate" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Data de Encerramento</label><br />
+                <span asp-validation-for="AddEventRequest.EndDate" class="text-danger"></span>
+                <input type="date" class="form-control" asp-for="AddEventRequest.EndDate" />
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Local do Evento</label><br />
+                <span asp-validation-for="AddEventRequest.EventLocation" class="text-danger"></span>
+                <input type="text" class="form-control" placeholder="Ex.: YMDA/YMCDA/YAMALOG" asp-for="AddEventRequest.EventLocation" />
+
+
+            </div>
+
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+
+
+        </form>
+
+
+
+
+    </body>
+
+
+
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+        
+
+    }
+}

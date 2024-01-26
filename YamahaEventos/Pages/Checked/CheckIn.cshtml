@@ -1,0 +1,49 @@
+﻿@page "{id:Guid}"
+@model CheckInModel
+@{
+    var message = ViewData["Message"]?.ToString();
+    var typeMessage = ViewData["TypeMessage"]?.ToString();
+    
+}
+
+
+
+<h1>Realizar Check-In</h1>
+
+<hr />
+
+@if (!string.IsNullOrWhiteSpace(message))
+{
+    @if (!string.IsNullOrWhiteSpace(typeMessage))
+    {
+        <div class="alert alert-danger" role="alert" data-dismiss="alert" autohide="true" data-delay="10000">
+            @message
+        </div>
+
+    }
+    else
+    {
+        <div class="alert alert-success" role="alert" data-dismiss="alert" autohide="true" data-delay="10000">
+            @message
+        </div>
+    }
+}
+
+<form method="post">
+    <input type="number" name="rfidCode" id="CodeRead" placeholder="Encoste o seu crachá" />
+    <button class="btn btn-primary" type="submit">Confirmar</button>
+</form>
+
+
+<p>@Model.Employee.Name</p>
+
+
+
+
+
+<script>
+
+    document.getElementById("CodeRead").focus();
+</script>
+
+

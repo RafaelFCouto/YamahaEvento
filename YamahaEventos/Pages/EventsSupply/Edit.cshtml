@@ -1,0 +1,98 @@
+﻿@page "{eventId:Guid}/{id:Guid}"
+@model YamahaEventos.Pages.EventsSupply.EditModel
+@{
+    var message = ViewData["Message"]?.ToString();
+    ViewData["Title"] = "Editar Item";
+}
+
+<html>
+
+<head>
+
+</head>
+<body>
+
+    <h1 class="mb-3">@ViewData["Title"]</h1>
+
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <form method="post">
+
+        <div class="mb-3">
+
+            <label class="form-label">Id</label>
+            <input type="text" class="form-control" asp-for="EditEventSupply.Id" readonly />
+
+        </div>
+
+
+        <div class="mb-3">
+
+            <label class="form-label">Nome</label>
+            <span asp-validation-for="EditEventSupply.Name" class="text-danger"></span>
+            <input type="text" class="form-control" asp-for="EditEventSupply.Name" />
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">Descrition</label>
+            <span asp-validation-for="EditEventSupply.Description" class="text-danger"></span>
+            <textarea class="form-control" asp-for="EditEventSupply.Description"></textarea>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">Quantidade Total de Itens</label>
+            <span asp-validation-for="EditEventSupply.TotalQuantity" class="text-danger"></span>
+            <input type="number" class="form-control" asp-for="EditEventSupply.TotalQuantity" placeholder="Informe a quantidade total desse item" />
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">Quantidade de Itens por Participante</label>
+            <span asp-validation-for="EditEventSupply.TotalPerParticipants" class="text-danger"></span>
+            <input type="number" class="form-control" asp-for="EditEventSupply.TotalPerParticipants" placeholder="Informe quantos itens o colaborador poderá retirar" />
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">Quantidade de itens retirados por vez</label>
+            <span asp-validation-for="EditEventSupply.TotalQuantityPerReceive" class="text-danger"></span>
+            <input type="number" class="form-control" asp-for="EditEventSupply.TotalQuantityPerReceive" />
+
+        </div>
+
+
+        <div class="mb-3">
+
+            <label class="form-label">Selecione o tipo do brinde</label><br />
+
+            <input type="radio" asp-for="EditEventSupply.SupplyType" value="1" checked /> Brinde
+            <br />
+            <input type="radio" asp-for="EditEventSupply.SupplyType" value="2" /> Consumível
+
+
+        </div>
+
+
+        <div class="mb-3 d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary" asp-page-handler="Update">Confirmar Edição</button>
+            <button type="submit" class="btn btn-danger" asp-page-handler="Delete">Deletar</button>
+
+        </div>
+
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+﻿@page
+@model YamahaEventos.Pages.Events.ListModel
+@{
+    ViewData["Title"] = "Lista de eventos";
+}
+
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 class="mb-3">@ViewData["Title"]</h1>
+
+        @if(Model.Evts != null && Model.Evts.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th>Nome</th>
+                        <th>Setor</th>
+                        <th>Localização</th>
+                        <th>Início</th>
+                        <th>Fim</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var evt in Model.Evts)
+                    {
+
+                        <tr>
+                            <td>@evt.CodeEvent</td>
+                            <td>@evt.Description</td>
+                            <td>@evt.Name</td>
+                            <td>@evt.DepartamentResponsible</td>
+                            <td>@evt.EventLocation</td>
+                            <td>@evt.StartDate</td>
+                            <td>@evt.EndDate</td>
+                            <td>@evt.StatusEvent</td>
+                            <td>
+                                <a href="/Events/Edit/@evt.Id" class="btn btn-dark">Editar</a>
+                                <a href="/EventsSupply/List/@evt.Id" class="btn btn-dark">Brindes</a>
+                                <a href="/Checked/Index/@evt.Id" class="btn btn-dark">Registros</a>
+                                
+                                
+                            </td>
+                        </tr>
+
+                    
+                    }
+                </tbody>
+            </table>
+
+        }
+        else
+        {
+            <p><strong>Não existe evento cadastrado</strong></p>
+            
+        }
+
+
+    </body>
+</html>

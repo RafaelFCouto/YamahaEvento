@@ -1,0 +1,106 @@
+﻿@page "{id:Guid}"
+@model YamahaEventos.Pages.Events.EditModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+
+<html>
+
+    <head>
+        
+    </head>
+
+    <body>
+
+        <h1 class="mb-3">Editar Evento </h1>
+
+        @if (!string.IsNullOrWhiteSpace(message))
+        {
+            <div class="alert alert-success" role="alert">
+                @message
+            </div>
+        }
+
+        <form method="post">
+
+            <div class="mb-3">
+
+                <label class="form-label">Id</label>
+                <input type="text" class="form-control" asp-for="EditEventViewModel.Id" readonly />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label"> Código Evento</label>
+                <input type="text" class="form-control" asp-for="EditEventViewModel.CodeEvent" readonly />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Nome</label>
+                <span asp-validation-for="EditEventViewModel.Name" class="text-danger"></span>
+                <input type="text" class="form-control" asp-for="EditEventViewModel.Name" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Descrição</label>
+                <span asp-validation-for="EditEventViewModel.Description" class="text-danger"></span>
+                <textarea class="form-control" asp-for="EditEventViewModel.Description"></textarea>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label">Departamento</label>
+                <span asp-validation-for="EditEventViewModel.DepartamentResponsible" class="text-danger"></span>
+                <input type="text" class="form-control" asp-for="EditEventViewModel.DepartamentResponsible" />
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label">Data de Início</label>
+                <span asp-validation-for="EditEventViewModel.StartDate" class="text-danger"></span>
+                <input type="date" class="form-control" asp-for="EditEventViewModel.StartDate" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Data de Encerramento</label>
+                <span asp-validation-for="EditEventViewModel.EndDate" class="text-danger"></span>
+                <input type="date" class="form-control" asp-for="EditEventViewModel.EndDate" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Local do Evento</label>
+                <span asp-validation-for="EditEventViewModel.EventLocation" class="text-danger"></span>
+                <input type="text" class="form-control" asp-for="EditEventViewModel.EventLocation" />
+
+            </div>
+
+
+
+            <div class="mb-3 d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary" asp-page-handler="Update">Confirmar Edição</button>
+                <button type="submit" class="btn btn-danger" asp-page-handler="Delete">Cancelar Evento</button>
+
+            </div>
+
+
+        </form>
+
+    </body>
+
+</html>
+
+
+

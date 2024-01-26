@@ -1,0 +1,66 @@
+﻿@page "{id:Guid}"
+@model YamahaEventos.Pages.Checked.ListVoucherModel
+@{
+}
+
+
+<html>
+<head>
+
+</head>
+<body>
+    <h1 class="mb-3">@ViewData["Title"]</h1>
+
+    @if (Model.Supplies != null && Model.Supplies.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição do Item</th>
+                    <th>Qtd. Total</th>
+                    <th>Qtd. por Participante</th>
+                    <th>Qtd. por Retirada</th>
+                    <th>Tipo de brinde</th>
+                    <th></th>
+                        
+
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var supply in Model.Supplies)
+                {
+
+                    <tr>
+                        <td>@supply.Name</td>
+                        <td>@supply.Description</td>
+                        <td>@supply.TotalQuantity</td>
+                        <td>@supply.TotalPerParticipants</td>
+                        <td>@supply.TotalQuantityPerReceive</td>
+                        <td>@supply.SupplyType</td>
+                        <td>
+                            <a href="/Checked/Voucher/@supply.EventId/@supply.Id" class="btn btn-dark">Registrar</a>
+                        </td>
+                    </tr>
+
+
+                }
+            </tbody>
+        </table>
+
+    }
+    else
+    {
+
+        <div>
+            <p><strong>Não existe brindes cadastrados neste evento, entre em contato com a Organização</strong></p>
+            
+        </div>
+
+    }
+
+
+</body>
+</html>

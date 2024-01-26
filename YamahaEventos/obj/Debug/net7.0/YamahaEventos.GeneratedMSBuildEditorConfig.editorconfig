@@ -1,0 +1,99 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = YamahaEventos
+build_property.RootNamespace = YamahaEventos
+build_property.ProjectDir = C:\Users\ya079936\temp\YamahaEventos\YamahaEventos\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ya079936\temp\YamahaEventos\YamahaEventos
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Checked/CheckIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tlZFxDaGVja0luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Checked/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tlZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Checked/ListVoucher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tlZFxMaXN0Vm91Y2hlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Checked/Voucher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tlZFxWb3VjaGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/EventsSupply/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzU3VwcGx5XEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/EventsSupply/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzU3VwcGx5XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/EventsSupply/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzU3VwcGx5XExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Events/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Events/AddOrganizer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzXEFkZE9yZ2FuaXplci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Events/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Events/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Participants/AddParticipants.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGljaXBhbnRzXEFkZFBhcnRpY2lwYW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Participants/ListEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGljaXBhbnRzXExpc3RFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ya079936/temp/YamahaEventos/YamahaEventos/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-161aecr3zq

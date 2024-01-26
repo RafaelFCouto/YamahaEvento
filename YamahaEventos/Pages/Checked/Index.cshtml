@@ -1,0 +1,74 @@
+﻿@page "{id:Guid}"
+@model YamahaEventos.Pages.Checked.IndexModel
+@{
+}
+
+
+@if (Model.Supplies != null && Model.Supplies.Any())
+{
+    <link rel="stylesheet" href="/css/index-checked.css">
+
+    <div class="register">
+
+        <div class="register-content">
+
+            <div class="card check-in">
+            
+                <div class="image">
+                    <img src="~/img/icons-registro.png" />    
+                </div>
+                <a href="/Checked/CheckIn/@Model.Id" class="btn btn-dark">Registro de Presença</a>
+
+            </div>
+
+            <div class="card voucher">
+
+                <div class="image">
+                    <img src="~/img/icons-voucher.png" />
+                </div>
+                <a href="/Checked/ListVoucher/@Model.Id" class="btn btn-dark">Retirada de Item</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+}
+else
+{
+    <link rel="stylesheet" href="/css/index-checked.css">
+
+    <div class="register">
+
+        <div class="register-content">
+
+            <div class="card check-in">
+
+                <div class="image">
+                    <img src="~/img/icons-registro.png" />
+                </div>
+                <a href="/Checked/CheckIn/@Model.Id" class="btn btn-dark">Registro de Presença</a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

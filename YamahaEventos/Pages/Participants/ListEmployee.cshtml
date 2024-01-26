@@ -1,0 +1,63 @@
+﻿@page
+@model ListEmployeeModel
+@{
+    ViewData["Title"] = "Lista de Funcionários";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <h1 class="mb-3">@ViewData["Title"]</h1>
+
+    @if (Model.Employees != null && Model.Employees.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Matrícula</th>
+                    <th>Nome</th>
+                    <th>Tipo de Vínculo</th>
+                    <th>Cargo</th>
+                    <th>Empresa</th>
+                    <th>CC</th>
+                    <th>Nome CC</th>
+                    <th>Status</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var emp in Model.Employees)
+                {
+
+                    <tr>
+                        <td>@emp.RfidCode</td>
+                        <td>@emp.Registration</td>
+                        <td>@emp.Name</td>
+                        <td>@emp.TypeEmployee</td>
+                        <td>@emp.Position</td>
+                        <td>@emp.Company</td>
+                        <td>@emp.CodeDepartament</td>
+                        <td>@emp.NameDepartament</td>
+                        <td>@emp.StatusEmployee</td>
+                    </tr>
+
+
+                }
+            </tbody>
+        </table>
+
+    }
+    else
+    {
+        <p><strong>Não existe colaboradores</strong></p>
+
+    }
+
+
+</body>
+</html>
+

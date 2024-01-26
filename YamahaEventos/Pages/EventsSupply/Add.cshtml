@@ -1,0 +1,76 @@
+﻿@page "{id:Guid}"
+@model YamahaEventos.Pages.EventsSupply.AddModel
+@{
+
+    ViewData["Title"] = "Controle de Itens";
+}
+
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<form method="post">
+
+    <div class="mb-3">
+
+        <label class="form-label">Nome</label>
+        <span asp-validation-for="AddEventSupply.Name" class="text-danger"></span>
+        <input type="text" class="form-control" asp-for="AddEventSupply.Name" />
+   
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">Descrition</label>
+        <span asp-validation-for="AddEventSupply.Description" class="text-danger"></span>
+        <textarea class="form-control" asp-for="AddEventSupply.Description" ></textarea>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">Quantidade Total de Itens</label>
+        <span asp-validation-for="AddEventSupply.TotalQuantity" class="text-danger"></span>
+        <input type="number" class="form-control" asp-for="AddEventSupply.TotalQuantity" placeholder="Informe a quantidade total desse item" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">Quantidade de Itens por Participante</label>
+        <span asp-validation-for="AddEventSupply.TotalPerParticipants" class="text-danger"></span>
+        <input type="number" class="form-control" asp-for="AddEventSupply.TotalPerParticipants" placeholder="Informe quantos itens o colaborador poderá retirar" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">Quantidade de itens retirados por vez</label>
+        <span asp-validation-for="AddEventSupply.TotalQuantityPerReceive" class="text-danger"></span>
+        <input type="number" class="form-control" asp-for="AddEventSupply.TotalQuantityPerReceive"/>
+
+    </div>
+
+
+    <div class="mb-3">
+
+        <label class="form-label">Selecione o tipo do brinde</label><br />
+
+        <input type="radio" asp-for="AddEventSupply.SupplyType" value="1" checked /> Brinde
+        <br />
+        <input type="radio" asp-for="AddEventSupply.SupplyType" value="2" /> Consumível
+
+
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+
+</form>
+
+
+
+
+
+
