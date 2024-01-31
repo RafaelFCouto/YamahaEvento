@@ -81,3 +81,4 @@ C:\Users\ya079936\temp\YamahaEventos\YamahaEventos\bin\Debug\net7.0\Microsoft.As
 C:\Users\ya079936\temp\YamahaEventos\YamahaEventos\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\ya079936\temp\YamahaEventos\YamahaEventos\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\ya079936\temp\YamahaEventos\YamahaEventos\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\ya079936\temp\YamahaEventos\YamahaEventos\obj\Debug\net7.0\YamahaEventos.sourcelink.json

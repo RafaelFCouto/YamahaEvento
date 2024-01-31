@@ -25,18 +25,22 @@ namespace YamahaEventos.Pages.Checked
             var emp = _dbContext.Employee.Where(e => e.RfidCode == rfidCode).FirstOrDefault();
             var supply = _dbContext.EventSupply.Where(s => s.Id == supplyId).FirstOrDefault();
             var qtdSupply = _dbContext.DeliverySupply.Where(e=>e.RfidCode==rfidCode && e.SupplyId==supplyId).Count();
+            var evt = _dbContext.Event.Where(e => e.Id == eventId).FirstOrDefault();
 
 
+            
             if(qtdSupply == supply.TotalPerParticipants )
             {
 
                 ViewData["Message"] = "Você já retirou esse item";
                 ViewData["TypeMessage"] = "Error";
             }
-            else if (!(_dbContext.Checking.Any(e=>e.RfidCode == rfidCode)))
+            else if (evt.LocationStatus==0 && !(_dbContext.Checking.Any(e => e.RfidCode == rfidCode)))
             {
+               
                 ViewData["Message"] = "O Colaborador não realizou o check-in";
                 ViewData["TypeMessage"] = "Error";
+                
             }
             else
             {
@@ -44,8 +48,8 @@ namespace YamahaEventos.Pages.Checked
                 var delivered = new DeliverySupply()
                 {
                     Id = new Guid(),
-                    EventId = eventId,
-                    SupplyId = supplyId,
+                    EventId = evt.Id,
+                    SupplyId = supply.Id,
                     RfidCode = rfidCode,
                     Registration = emp.Registration,
                     Name = emp.Name,

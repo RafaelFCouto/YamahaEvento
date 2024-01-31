@@ -56,12 +56,24 @@
 
             <div class="mb-3">
 
+                <label class="form-label">O evento será:</label><br />
+
+                <input type="radio" asp-for="AddEventRequest.LocationStatus" value=1/> Interno
+                <br />
+                <input type="radio" asp-for="AddEventRequest.LocationStatus" value=0 /> Externo
+
+
+            </div>
+
+            <div class="mb-3">
+
                 <label class="form-label">Local do Evento</label><br />
                 <span asp-validation-for="AddEventRequest.EventLocation" class="text-danger"></span>
                 <input type="text" class="form-control" placeholder="Ex.: YMDA/YMCDA/YAMALOG" asp-for="AddEventRequest.EventLocation" />
 
 
             </div>
+
 
 
             <div class="mb-3">

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YamahaEventos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d7a3063ede687e1ef39055c1999047d38e67b3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("YamahaEventos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YamahaEventos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -38,5 +38,9 @@ namespace YamahaEventos.Models.ViewModels
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0: dd/MM/yyyy}")]
         public DateTime EndDate { get; set; }
+
+
+        [Required]
+        public LocationStatus LocationStatus { get; set; }
     }
 }

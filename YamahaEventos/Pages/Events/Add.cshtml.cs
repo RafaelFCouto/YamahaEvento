@@ -55,7 +55,8 @@ namespace YamahaEventos.Pages.Events
                 EventLocation = AddEventRequest.EventLocation,
                 StatusEvent = EventStatus.Planejado,
                 StartDate = AddEventRequest.StartDate,
-                EndDate = AddEventRequest.EndDate
+                EndDate = AddEventRequest.EndDate,
+                LocationStatus = AddEventRequest.LocationStatus
 
             };
 
