@@ -19,10 +19,12 @@ namespace YamahaEventos.Pages.Checked
 
 
         public List<EventSupply> Supplies { get; set; }
+        public List<LocationEvent> Locations { get; set; }
 
         public void OnGet()
         {
             Supplies = _dbContext.EventSupply.Where(e=> e.EventId == Id).ToList();
+            Locations = _dbContext.LocationEvent.Where(e=>e.EventId == Id).ToList();
         }
     }
 }

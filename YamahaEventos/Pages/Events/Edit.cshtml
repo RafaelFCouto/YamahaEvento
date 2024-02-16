@@ -79,20 +79,40 @@
 
             </div>
 
+
+
             <div class="mb-3">
 
-                <label class="form-label">Local do Evento</label>
-                <span asp-validation-for="EditEventViewModel.EventLocation" class="text-danger"></span>
-                <input type="text" class="form-control" asp-for="EditEventViewModel.EventLocation" />
+                <label class="form-label">O evento será:</label><br />
+                @if ((int)Model.EditEventViewModel.LocationStatus == 1)
+                {
+
+                    <input type="radio" asp-for="EditEventViewModel.LocationStatus" value=1 checked />
+                    <p style="display:inline-block;">Interno</p>
+
+                    <input type="radio" asp-for="EditEventViewModel.LocationStatus" value=0 />
+                    <p style="display:inline-block;">Externo</p>
+
+                }
+                else
+                {
+                    <input type="radio" asp-for="EditEventViewModel.LocationStatus" value=1 />
+                    <p style="display:inline-block;">Interno</p>
+
+                    <input type="radio" asp-for="EditEventViewModel.LocationStatus" value=0 checked />
+                    <p style="display:inline-block;">Externo</p>
+
+                }
 
             </div>
 
+
+    
 
 
             <div class="mb-3 d-flex justify-content-between">
                 <button type="submit" class="btn btn-primary" asp-page-handler="Update">Confirmar Edição</button>
                 <button type="submit" class="btn btn-danger" asp-page-handler="Delete">Cancelar Evento</button>
-
             </div>
 
 

@@ -21,6 +21,11 @@ namespace YamahaEventos.Data
         public DbSet<EventSupply> EventSupply { get; set; }
 
         public DbSet<DeliverySupply> DeliverySupply { get; set; }   
+
+        public DbSet<LocationEvent> LocationEvent { get; set; }
+
+        public DbSet<SubEvent> SubEvent { get; set; }
+
         
 
 

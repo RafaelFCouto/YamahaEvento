@@ -1,0 +1,81 @@
+﻿@page "{eventId:Guid}"
+@model YamahaEventos.Pages.Checked.ListSubEventModel
+@{
+    ViewData["Title"] = "Listagem de Sub Eventos";
+    
+}
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/btn.css">
+    </head>
+    <body>
+
+        <div class="mb-3 d-flex justify-content-between align-items-cente">
+            <h1 class="mb-3">@ViewData["Title"]</h1>
+            <a href="/Checked/Index/@Model.EventId" class="btn btn-primary btn-block">Voltar</a>
+
+        </div>
+        
+        
+
+        @if (Model.SubEvents != null && Model.SubEvents.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Localização</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Departamento Responsável</th>
+
+                        <th></th>
+
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var subEvts in Model.SubEvents)
+                    {
+
+                        <tr>
+                            <td>
+                                @foreach(var loc in Model.Location)
+                                {   
+                                    @if(loc.Id == subEvts.LocationId)
+                                    {
+                                        <p><strong>@loc.LocationName</strong></p>
+                                    
+                                    }
+                                }
+
+                            </td>
+                            <td>@subEvts.Name</td>
+                            <td>@subEvts.Description</td>
+                            <td>@subEvts.DepartamentResponsible</td>
+                            <td>
+                                <a href="/Checked/CheckIn/@subEvts.EventId/@subEvts.Id" class="btn btn-dark">Registrar</a>
+                            </td>
+                        </tr>
+
+
+                    }
+                </tbody>
+            </table>
+
+        }
+        else
+        {
+
+            <div>
+                <p><strong>Para iniciar o registro, cadastre um sub evento</strong></p>
+                <a href="/Events/SubEventPage/AddSubEvent/@Model.EventId" class="btn btn-dark">Cadastrar sub evento</a>
+
+            </div>
+
+        }
+
+
+    </body>
+</html>

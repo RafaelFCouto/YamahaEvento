@@ -8,20 +8,25 @@
 <html>
     <head>
 
+        <link rel="stylesheet" href="/css/btn.css">
+
     </head>
     <body>
-        <h1 class="mb-3">@ViewData["Title"]</h1>
+        <div class="mb-3 d-flex justify-content-between align-items-cente">
+            <h1 class="mb-3">@ViewData["Title"]</h1>
+            <a href="/Index" class="btn btn-primary btn-block">Voltar</a>
+
+        </div>
 
         @if(Model.Evts != null && Model.Evts.Any())
         {
-            <table class="table">
+            <table class="table" style="white-space:nowrap">
                 <thead>
                     <tr>
                         <th>Código</th>
                         <th>Descrição</th>
                         <th>Nome</th>
                         <th>Setor</th>
-                        <th>Localização</th>
                         <th>Início</th>
                         <th>Fim</th>
                         <th>Status</th>
@@ -37,16 +42,14 @@
                             <td>@evt.Description</td>
                             <td>@evt.Name</td>
                             <td>@evt.DepartamentResponsible</td>
-                            <td>@evt.EventLocation</td>
-                            <td>@evt.StartDate</td>
-                            <td>@evt.EndDate</td>
+                            <td>@String.Format("{0: dd/MM/yyyy}", evt.StartDate)</td>
+                            <td>@String.Format("{0: dd/MM/yyyy}", evt.EndDate)</td>
                             <td>@evt.StatusEvent</td>
                             <td>
                                 <a href="/Events/Edit/@evt.Id" class="btn btn-dark">Editar</a>
+                                <a href="/Events/SubEventPage/ListMainSubEvent/@evt.Id" class="btn btn-dark">Sub Evento</a>
                                 <a href="/EventsSupply/List/@evt.Id" class="btn btn-dark">Brindes</a>
-                                <a href="/Checked/Index/@evt.Id" class="btn btn-dark">Registros</a>
-                                
-                                
+                                <a href="/Checked/Index/@evt.Id" class="btn btn-dark">Registros</a> 
                             </td>
                         </tr>
 

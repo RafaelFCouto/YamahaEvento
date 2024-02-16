@@ -1,0 +1,90 @@
+﻿@page "{eventId:Guid}"
+@model YamahaEventos.Pages.Events.SubEventPage.ListMainSubEventModel
+@{
+}
+
+
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        @if(Model.SubEvents != null && Model.SubEvents.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Departamento responsável</th>
+                        <th>Localização</th>
+                        <th>
+                            <a href="/Events/SubEventPage/AddSubEvent/@Model.EventId" class="btn btn-dark">Add</a>
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var subEvt in Model.SubEvents)
+                    {
+                        <tr>
+                            <td>@subEvt.Name</td>
+                            <td>@subEvt.Description</td>
+                            <td>@subEvt.DepartamentResponsible</td>
+                            <td>
+                            @foreach(var loc in Model.Locations)
+                            {
+                                @if(loc.Id == subEvt.LocationId)
+                                {
+                                    <strong>@loc.LocationName</strong>
+                                }
+                            }
+                            </td>
+                            <td>
+                                <a href="/Events/SubEventPage/EditSubEvent/@subEvt.Id" class="btn btn-dark">Edit</a>
+                                
+                            </td>
+                        </tr>
+                    
+                    }
+                </tbody>
+
+
+            </table>
+        
+        }
+        else
+        {
+            <div>
+
+                <p><strong>Não existe nenhum sub evento cadastrado</strong></p>
+                <a href="/Events/SubEventPage/AddSubEvent/@Model.EventId" class="btn btn-dark">Add</a>
+
+            </div>
+
+
+        }
+
+
+
+
+
+
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+

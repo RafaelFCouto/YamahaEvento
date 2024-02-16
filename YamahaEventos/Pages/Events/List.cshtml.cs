@@ -21,7 +21,8 @@ namespace YamahaEventos.Pages.Events
 
         public void OnGet()
         {
-            Evts = _dbContext.Event.ToList();
+            Evts = _dbContext.Event.OrderBy(e=>e.StartDate).ToList();
+            
         }
 
 

@@ -52,18 +52,19 @@ namespace YamahaEventos.Pages.Events
                 Name = AddEventRequest.Name,
                 Description = AddEventRequest.Description,
                 DepartamentResponsible = AddEventRequest.DepartamentResponsible,
-                EventLocation = AddEventRequest.EventLocation,
                 StatusEvent = EventStatus.Planejado,
                 StartDate = AddEventRequest.StartDate,
                 EndDate = AddEventRequest.EndDate,
-                LocationStatus = AddEventRequest.LocationStatus
+                LocationStatus = AddEventRequest.LocationStatus,
+              
+                
 
             };
 
             _dbContext.Event.Add(EventDomainModel);
             _dbContext.SaveChanges();
 
-            return RedirectToPage("/Events/Add");
+            return RedirectToPage("/Events/List");
 
 
             

@@ -16,56 +16,31 @@ namespace YamahaEventos.Pages.Checked
             _dbContext = dbContext;
         }
 
+        [FromRoute]
+        public Guid EventId { get; set; }
 
-        public Employee Employee { get; set; }
+     
 
+      
 
-       
-
-
-        public void OnGet()
-        {
-
-            
-
-
-        }
-
-        public void OnPost(double RfidCode, [FromRoute] Guid id)
+        public void OnPost(double RfidCode, [FromRoute] Guid subEventId)
         {
 
             
             var emp = _dbContext.Employee.Where(e => e.RfidCode == RfidCode).FirstOrDefault();
+            var subEvt = _dbContext.SubEvent.Where(e=> e.Id == subEventId).FirstOrDefault();
+            bool validation = _dbContext.Checking.Any(e => e.RfidCode == RfidCode && e.SubEventId == subEventId);
 
-            if (emp != null)
+
+            if(validation && (int)subEvt.AllowRepetition == 0)
             {
-
-                Employee = emp;
-
-            }
-            else 
-            {
-                Employee = new Employee()
-                {
-                    Name = "Não encontrado",
-                    NameDepartament = "Não encontrado",
-                    Position = "Não encontrado"
-
-                };
-
-            
-            
-            }
-            
-
-            bool validation = _dbContext.Checking.Any(e => e.RfidCode == RfidCode && e.EventId == id);
-            
-
-            if (validation)
-            {
+                
+                
                 ViewData["Message"] = "O registro já foi realizado!";
                 // TypeMessage: Se acontecer algum problema == Erro / Se der certo == null
                 ViewData["TypeMessage"] = "error";
+                
+
             }
             else if (emp == null)
             {
@@ -82,8 +57,8 @@ namespace YamahaEventos.Pages.Checked
                 var check = new Checking()
                 {
                     Id = new Guid(),
-                    EventId = id,
-                    RfidCode = RfidCode,
+                    SubEventId = subEvt.Id,
+                    RfidCode = emp.RfidCode,
                     CheckInTimes = DateTime.Now,
                     NameEmployee = emp.Name,
                     Registration = emp.Registration
@@ -96,6 +71,10 @@ namespace YamahaEventos.Pages.Checked
 
                 ViewData["Message"] = "Registro realizado!";
                 ViewData["TypeMessage"] = null;
+                ViewData["Name"] = emp.Name;
+                ViewData["Position"] = emp.Position;
+                ViewData["Departament"] = emp.NameDepartament;
+
             }
 
             

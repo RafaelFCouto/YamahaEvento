@@ -17,15 +17,17 @@ namespace YamahaEventos.Pages.Checked
             _dbContext = dbContext;
         }
 
+        [FromRoute]
+        public Guid EventId { get; set; }
 
 
         public void OnPost(double rfidCode, [FromRoute] Guid eventId, [FromRoute] Guid supplyId)
         {
 
-            var emp = _dbContext.Employee.Where(e => e.RfidCode == rfidCode).FirstOrDefault();
-            var supply = _dbContext.EventSupply.Where(s => s.Id == supplyId).FirstOrDefault();
-            var qtdSupply = _dbContext.DeliverySupply.Where(e=>e.RfidCode==rfidCode && e.SupplyId==supplyId).Count();
-            var evt = _dbContext.Event.Where(e => e.Id == eventId).FirstOrDefault();
+            var emp = _dbContext.Employee.FirstOrDefault(e => e.RfidCode == rfidCode);
+            var supply = _dbContext.EventSupply.FirstOrDefault(s => s.Id == supplyId);
+            var qtdSupply = _dbContext.DeliverySupply.Count(e => e.RfidCode == rfidCode && e.SupplyId == supplyId);
+            var evt = _dbContext.Event.FirstOrDefault(e => e.Id == eventId);
 
 
             
@@ -45,17 +47,20 @@ namespace YamahaEventos.Pages.Checked
             else
             {
 
+
                 var delivered = new DeliverySupply()
                 {
-                    Id = new Guid(),
-                    EventId = evt.Id,
+                    Id = Guid.NewGuid(),
                     SupplyId = supply.Id,
-                    RfidCode = rfidCode,
+                    EventId = evt.Id,
+                    RfidCode = emp.RfidCode,
                     Registration = emp.Registration,
                     Name = emp.Name,
                     DeliveredDateTime = DateTime.Now,
 
                 };
+
+    
 
                 _dbContext.DeliverySupply.Add(delivered);
                 _dbContext.SaveChanges();
@@ -63,6 +68,9 @@ namespace YamahaEventos.Pages.Checked
 
                 ViewData["Message"] = "Retirada Realizada com sucesso!";
                 ViewData["TypeMessage"] = null;
+                ViewData["Name"] = emp.Name;
+                ViewData["Position"] = emp.Position;
+                ViewData["Departament"] = emp.NameDepartament;
             }
 
 

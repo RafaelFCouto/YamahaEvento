@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using YamahaEventos;
 using YamahaEventos.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,17 @@ var YamahaEventosConnectionString = builder.Configuration.GetConnectionString("Y
 
 builder.Services.AddDbContext<YamahaEventoDbContext>(options =>options.UseSqlServer(YamahaEventosConnectionString));
 
+var host = new WebHostBuilder()
+  .UseKestrel()
+  .UseContentRoot(Directory.GetCurrentDirectory())
+  .UseIISIntegration()
+  .UseStartup<Startup>()
+  .Build();
+
+builder.Services.Configure<IISOptions>(o =>
+{
+    o.ForwardClientCertificate = false;
+});
 
 
 // Add services to the container.

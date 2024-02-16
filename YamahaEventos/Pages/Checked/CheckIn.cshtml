@@ -1,14 +1,22 @@
-﻿@page "{id:Guid}"
+﻿@page "{EventId:Guid}/{subEventId:Guid}"
 @model CheckInModel
 @{
     var message = ViewData["Message"]?.ToString();
     var typeMessage = ViewData["TypeMessage"]?.ToString();
+    var name = ViewData["Name"]?.ToString();
+    var position = ViewData["Position"]?.ToString();
+    var departament = ViewData["Departament"]?.ToString();
     
 }
 
+<link rel="stylesheet" href="/css/btn.css">
 
+<div class="mb-3 d-flex justify-content-between align-items-center">
+ 
+    <h1>Realizar Check-In</h1>
+    <a href="/Checked/ListSubEvent/@Model.EventId" class="btn btn-primary btn-block">Voltar</a>
 
-<h1>Realizar Check-In</h1>
+</div>
 
 <hr />
 
@@ -35,6 +43,14 @@
 </form>
 
 
+<div>
+
+    <h3>@name</h3>
+    <br />
+    <h3>@position</h3>    
+    <br />
+    <h3>@departament</h3>    
+</div>
 
 
 

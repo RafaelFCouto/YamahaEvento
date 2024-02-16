@@ -24,8 +24,7 @@ namespace YamahaEventos.Models.Domain
         [Required]
         public string DepartamentResponsible { get; set; }
 
-        [Required]
-        public string  EventLocation { get; set; }
+    
 
         [Required]
         public EventStatus StatusEvent { get; set; }
@@ -47,11 +46,8 @@ namespace YamahaEventos.Models.Domain
 
 
 
-        
 
-
-
-
+  
 
     }
 }

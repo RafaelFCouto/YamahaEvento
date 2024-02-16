@@ -39,7 +39,9 @@ namespace YamahaEventos.Pages.Events
                     DepartamentResponsible = ev.DepartamentResponsible,
                     StartDate = ev.StartDate,
                     EndDate = ev.EndDate,
-                    EventLocation = ev.EventLocation,
+                    LocationStatus = ev.LocationStatus,
+
+                   
 
                 };
             }
@@ -56,9 +58,10 @@ namespace YamahaEventos.Pages.Events
                 existingEvent.Name = EditEventViewModel.Name;
                 existingEvent.Description = EditEventViewModel.Description;
                 existingEvent.DepartamentResponsible = EditEventViewModel.DepartamentResponsible;
-                existingEvent.EventLocation = EditEventViewModel.EventLocation;
                 existingEvent.StartDate = EditEventViewModel.StartDate;
                 existingEvent.EndDate = EditEventViewModel.EndDate;
+                existingEvent.LocationStatus = EditEventViewModel.LocationStatus;
+
             }
 
             _dbContext.SaveChanges();
@@ -76,6 +79,7 @@ namespace YamahaEventos.Pages.Events
             {
 
                 existingEvent.StatusEvent = EventStatus.Cancelado;
+                //_dbContext.Event.Remove(existingEvent); //- Ativar caso precise.
                 _dbContext.SaveChanges();
 
                 ViewData["Message"] = "Evento cancelado!";

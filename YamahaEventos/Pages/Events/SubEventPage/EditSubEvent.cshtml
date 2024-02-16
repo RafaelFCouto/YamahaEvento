@@ -1,0 +1,116 @@
+﻿@page "{subEventId:Guid}"
+@model YamahaEventos.Pages.Events.SubEventPage.EditSubEventModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+
+
+
+<html>
+
+    <head>
+
+    </head>
+    <body>
+        <h1 class="mb-3">Editar Sub Evento </h1>
+
+        @if (!string.IsNullOrWhiteSpace(message))
+        {
+            <div class="alert alert-success" role="alert">
+                @message
+            </div>
+        }
+
+        <form method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Id</label>
+                <input type="text" class="form-control" asp-for="EditSubEvent.Id" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label>Evento</label>
+                <input type="text" class="form-control" asp-for="Event.Name" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label>Localização</label>
+                <input type="text" class="form-control" asp-for="Location.LocationName" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <span asp-validation-for="EditSubEvent.Name" class="text-danger"></span>
+                <input type="text" class="form-control" asp-for="EditSubEvent.Name"  />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <span asp-validation-for="EditSubEvent.Name" class="text-danger"></span>
+                <textarea type="text" class="form-control" asp-for="EditSubEvent.Description" ></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Departamento Responsável</label>
+                <span asp-validation-for="EditSubEvent.DepartamentResponsible" class="text-danger"></span>
+                <input type="text" class="form-control" asp-for="EditSubEvent.DepartamentResponsible"  />
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Será permitido a entrada mais de uma vez?</label><br />
+                @if ((int)Model.EditSubEvent.AllowRepetition == 1)
+                {
+                
+                    <input type="radio" asp-for="EditSubEvent.AllowRepetition" value=1 checked/> 
+                    <p style="display:inline-block;">Permitido</p>
+                    
+                    <input type="radio" asp-for="EditSubEvent.AllowRepetition" value=0 />
+                    <p style="display:inline-block;">Bloqueado</p>
+
+                }
+                else
+                {
+                    <input type="radio" asp-for="EditSubEvent.AllowRepetition" value=1  />
+                    <p style="display:inline-block;">Permitido</p>
+
+                    <input type="radio" asp-for="EditSubEvent.AllowRepetition" value=0 checked />
+                    <p style="display:inline-block;">Bloqueado</p>
+                
+                }
+
+            </div>
+
+            <div class="mb-3 d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary" asp-page-handler="Update">Confirmar Edição</button>
+                <button type="submit" class="btn btn-danger" asp-page-handler="Delete">Remover Sub Evento</button>
+            </div>
+    
+
+
+
+
+
+        </form>
+
+    </body>
+
+
+
+
+
+
+    
+
+
+
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+
+
+    }
+}

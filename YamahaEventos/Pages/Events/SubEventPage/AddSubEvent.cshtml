@@ -1,0 +1,86 @@
+﻿@page "{id:Guid}"
+@model YamahaEventos.Pages.Events.AddSubEventModel
+@{
+}
+
+
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 class="mb-3">Adicione o Sub Evento</h1>
+
+        <form method="post">
+
+
+            <div class="mb-3">
+
+                <label class="form-label">Nome</label><br />
+                <span asp-validation-for="AddSubEvent.Name" class="text-danger"></span>
+                <input type="text" class="form-control" asp-for="AddSubEvent.Name" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Descrição</label><br />
+                <span asp-validation-for="AddSubEvent.Description" class="text-danger"></span>
+                <textarea class="form-control" asp-for="AddSubEvent.Description"></textarea>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label">Departamento</label><br />
+                <span asp-validation-for="AddSubEvent.DepartamentResponsible" class="text-danger"></span>
+                <input type="text" class="form-control" asp-for="AddSubEvent.DepartamentResponsible" />
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Localização</label><br />
+                <span asp-validation-for="AddSubEvent.DepartamentResponsible" class="text-danger"></span>
+                <input type="text" class="form-control" asp-for="AddLocation.LocationName" />
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">Será permitido a entrada mais de uma vez?</label><br />
+
+                <input type="radio" asp-for="AddSubEvent.AllowRepetition" value=1 /> Permitido
+                <br />
+                <input type="radio" asp-for="AddSubEvent.AllowRepetition" value=0 /> Bloqueado
+
+
+            </div>
+
+
+
+            <div class="mb-3 d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="/checked/ListSubEvent/@Model.Id" class="btn btn-primary">Sub Eventos</a>
+            </div>
+
+
+        </form>
+
+
+
+
+    </body>
+
+
+
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+        
+
+    }
+}

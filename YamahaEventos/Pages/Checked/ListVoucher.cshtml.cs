@@ -15,9 +15,8 @@ namespace YamahaEventos.Pages.Checked
             _dbContext = dbContext;
         }
 
-
         [FromRoute]
-        public Guid Id { get; set; }
+        public Guid EventId { get; set; }
 
         public List<EventSupply> Supplies { get; set; }
 

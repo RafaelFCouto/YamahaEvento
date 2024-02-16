@@ -9,7 +9,7 @@ namespace YamahaEventos.Models.Domain
 
         [Key]
         public Guid Id { get; set; }
-        public Guid EventId { get; set; }
+        public Guid SubEventId { get; set; }
         public double RfidCode { get; set; }
         public double Registration { get; set; }
 
